@@ -17,7 +17,7 @@ public class hiddenLayersPageTest {
     }
 
     @Test(testName = "Check double clicking on Green button")
-    public static void clickGreenButton() {
+    public static void clickGreenButtonTest() {
         homePage homePage = new homePage(driver);
         hiddenLayersPage hiddenLayersPage = new hiddenLayersPage(driver);
 

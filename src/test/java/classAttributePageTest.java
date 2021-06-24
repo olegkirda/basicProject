@@ -14,7 +14,7 @@ public class classAttributePageTest {
     }
 
     @Test(testName = "Check clicking on Blue Button and pressing ok in Alert popup")
-    public static void clickButtonWithDynamicID() {
+    public static void clickBlueButtonTest() {
         homePage homePage = new homePage(driver);
         classAttributePage classAttributePage = new classAttributePage(driver);
 
@@ -22,7 +22,6 @@ public class classAttributePageTest {
         homePage.clickClassAttributeLink();
         classAttributePage.clickBlueButton();
         classAttributePage.acceptAlert();
-
     }
 
     @AfterTest

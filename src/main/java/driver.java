@@ -1,10 +1,10 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class pageObject {
+public class driver {
     protected WebDriver driver;
 
-    public pageObject(WebDriver driver) {
+    public driver(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }

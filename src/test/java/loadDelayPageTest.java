@@ -1,5 +1,6 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -14,8 +15,8 @@ public class loadDelayPageTest {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
     }
 
-    @Test(testName = "Click on Button Appearing after Delay")
-    public static void clickButtonAppearingAfterDelay() {
+    @Test(testName = "Check clicking on Button Appearing after Delay")
+    public static void clickButtonAppearingAfterDelayTest() {
         homePage homePage = new homePage(driver);
         loadDelayPage loadDelayPage = new loadDelayPage(driver);
 
@@ -23,6 +24,7 @@ public class loadDelayPageTest {
         homePage.clickLoadDelayLink();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         loadDelayPage.clickButtonAppearingAfterDelay();
+        Assert.assertEquals(loadDelayPage.getButtonText(), "Button Appearing After Delay");
     }
 
     @AfterTest

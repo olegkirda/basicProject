@@ -19,4 +19,8 @@ public class loadDelayPage extends homePage {
         this.buttonAppearingAfterDelay.click();
     }
 
+    public String getButtonText() {
+        return buttonAppearingAfterDelay.getText();
+    }
+
 }

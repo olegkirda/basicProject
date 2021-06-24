@@ -1,11 +1,8 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.concurrent.TimeUnit;
-
-public class homePage extends pageObject {
+public class homePage extends driver {
 
     @FindBy(xpath = "//*[@href='/dynamicid']")
     public WebElement dynamicIDLink;
@@ -21,6 +18,18 @@ public class homePage extends pageObject {
 
     @FindBy(xpath = "//*[@href='/ajax']")
     public WebElement ajaxDataLink;
+
+    @FindBy(xpath = "//*[@href='/clientdelay']")
+    public WebElement clientSideDelayLink;
+
+    @FindBy(xpath = "//*[@href='/click']")
+    public WebElement clickLink;
+
+    @FindBy(xpath = "//*[@href='/textinput']")
+    public WebElement textInputLink;
+
+    @FindBy(xpath = "//*[@href='/scrollbars']")
+    public WebElement scrollbarsLink;
 
     public homePage(WebDriver driver) {
         super(driver);
@@ -49,5 +58,26 @@ public class homePage extends pageObject {
     public void clickAjaxDataLink() {
         this.ajaxDataLink.click();
     }
+
+    public void clickClientSideDelayLink() {
+        this.clientSideDelayLink.click();
+    }
+
+    public void clickClickLink() {
+        this.clickLink.click();
+    }
+
+    public void clickTextInputLink() {
+        this.textInputLink.click();
+    }
+
+    public void clickScrollbarsLink() {
+        this.scrollbarsLink.click();
+    }
+
+
+
+
+
 
 }

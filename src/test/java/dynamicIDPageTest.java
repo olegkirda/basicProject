@@ -14,13 +14,14 @@ public class dynamicIDPageTest {
     }
 
     @Test(testName = "Check clicking on Button with Dynamic ID")
-    public static void clickButtonWithDynamicID() {
+    public static void clickButtonWithDynamicIDTest() {
         homePage homePage = new homePage(driver);
         dynamicIDPage dynamicIDpage = new dynamicIDPage(driver);
 
         homePage.open();
         homePage.clickDynamicIDLink();
         dynamicIDpage.clickButtonWithDynamicID();
+        Assert.assertEquals(dynamicIDpage.getButtonText(), "Button with Dynamic ID");
 
     }
 
