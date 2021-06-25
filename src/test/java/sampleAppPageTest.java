@@ -5,7 +5,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class textInputPageTest {
+import java.util.concurrent.TimeUnit;
+
+public class sampleAppPageTest {
     private static final WebDriver driver = new ChromeDriver();
 
     @BeforeTest
@@ -13,16 +15,18 @@ public class textInputPageTest {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
     }
 
-    @Test(testName = "Check the button name is changing")
-    public static void clickUpdatingButtonTest() {
+    @Test(testName = "Check filling and submiting the form")
+    public static void submitFormTest() {
         homePage homePage = new homePage(driver);
-        textInputPage textInputPage = new textInputPage(driver);
+        sampleAppPage sampleAppPage = new sampleAppPage(driver);
 
         homePage.open();
-        homePage.clickTextInputLink();
-        textInputPage.enterNewButtonName();
-        textInputPage.clickUpdatingButton();
-        Assert.assertEquals(textInputPage.getButtonText(), "New Button Name");
+        homePage.clickSampleAppLink();
+        sampleAppPage.enterUserName();
+        sampleAppPage.enterPassword();
+        sampleAppPage.clickLoginButton();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        Assert.assertEquals(sampleAppPage.getLoginStatus(), "Welcome, Name!");
     }
 
     @AfterTest

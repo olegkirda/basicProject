@@ -22,7 +22,6 @@ public class dynamicIDPageTest {
         homePage.clickDynamicIDLink();
         dynamicIDpage.clickButtonWithDynamicID();
         Assert.assertEquals(dynamicIDpage.getButtonText(), "Button with Dynamic ID");
-
     }
 
     @AfterTest

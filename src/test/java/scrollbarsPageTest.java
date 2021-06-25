@@ -23,6 +23,7 @@ public class scrollbarsPageTest {
         homePage.open();
         homePage.clickScrollbarsLink();
         scrollbarsPage.clickHidingButton();
+        Assert.assertEquals(scrollbarsPage.getButtonText(), "Hiding Button");
     }
 
     @AfterTest

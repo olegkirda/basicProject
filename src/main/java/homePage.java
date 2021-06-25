@@ -31,6 +31,18 @@ public class homePage extends driver {
     @FindBy(xpath = "//*[@href='/scrollbars']")
     public WebElement scrollbarsLink;
 
+    @FindBy(xpath = "//*[@href='/verifytext']")
+    public WebElement verifyTextLink;
+
+    @FindBy(xpath = "//*[@href='/visibility']")
+    public WebElement visibilityLink;
+
+    @FindBy(xpath = "//*[@href='/sampleapp']")
+    public WebElement sampleAppLink;
+
+    @FindBy(xpath = "//*[@href='/mouseover']")
+    public WebElement mouseOverLink;
+
     public homePage(WebDriver driver) {
         super(driver);
     }
@@ -75,9 +87,20 @@ public class homePage extends driver {
         this.scrollbarsLink.click();
     }
 
+    public void clickVerifyTextLink() {
+        this.verifyTextLink.click();
+    }
 
+    public void clickVisibilityLink() {
+        this.visibilityLink.click();
+    }
 
+    public void clickSampleAppLink() {
+        this.sampleAppLink.click();
+    }
 
-
+    public void clickMouseOverLink() {
+        this.mouseOverLink.click();
+    }
 
 }

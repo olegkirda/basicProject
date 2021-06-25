@@ -25,4 +25,7 @@ public class scrollbarsPage extends driver {
         hidingButton.click();
     }*/
 
+    public String getButtonText() {
+        return hidingButton.getText();
+    }
 }

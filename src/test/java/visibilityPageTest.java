@@ -1,3 +1,4 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -5,7 +6,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class textInputPageTest {
+import java.util.concurrent.TimeUnit;
+
+public class visibilityPageTest {
     private static final WebDriver driver = new ChromeDriver();
 
     @BeforeTest
@@ -13,16 +16,17 @@ public class textInputPageTest {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
     }
 
-    @Test(testName = "Check the button name is changing")
-    public static void clickUpdatingButtonTest() {
+    @Test(testName = "Check elements are invisible after clicking on Hide Button")
+    public static void clickHideButtonTest() {
         homePage homePage = new homePage(driver);
-        textInputPage textInputPage = new textInputPage(driver);
+        visibilityPage visibilityPage = new visibilityPage(driver);
 
         homePage.open();
-        homePage.clickTextInputLink();
-        textInputPage.enterNewButtonName();
-        textInputPage.clickUpdatingButton();
-        Assert.assertEquals(textInputPage.getButtonText(), "New Button Name");
+        homePage.clickVisibilityLink();
+        visibilityPage.clickHideButton();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        Assert.assertFalse(visibilityPage.removedButton.isDisplayed());
+
     }
 
     @AfterTest
