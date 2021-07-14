@@ -13,4 +13,8 @@ public class clickPage extends driver {
     public void clickBadButton() {
         this.badButton.click();
     }
+
+    public String getButtonClassName() {
+        return badButton.getAttribute("className");
+    }
 }

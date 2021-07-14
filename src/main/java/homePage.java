@@ -31,8 +31,14 @@ public class homePage extends driver {
     @FindBy(xpath = "//*[@href='/scrollbars']")
     public WebElement scrollbarsLink;
 
+    @FindBy(xpath = "//*[@href='/dynamictable']")
+    public WebElement dynamicTableLink;
+
     @FindBy(xpath = "//*[@href='/verifytext']")
     public WebElement verifyTextLink;
+
+    @FindBy(xpath = "//*[@href='/progressbar']")
+    public WebElement progressBarLink;
 
     @FindBy(xpath = "//*[@href='/visibility']")
     public WebElement visibilityLink;
@@ -42,6 +48,9 @@ public class homePage extends driver {
 
     @FindBy(xpath = "//*[@href='/mouseover']")
     public WebElement mouseOverLink;
+
+    @FindBy(xpath = "//*[@href='/nbsp']")
+    public WebElement nonBreakingSpaceLink;
 
     public homePage(WebDriver driver) {
         super(driver);
@@ -87,8 +96,16 @@ public class homePage extends driver {
         this.scrollbarsLink.click();
     }
 
+    public void clickDynamicTableLink() {
+        this.dynamicTableLink.click();
+    }
+
     public void clickVerifyTextLink() {
         this.verifyTextLink.click();
+    }
+
+    public void clickProgressBarLink() {
+        this.progressBarLink.click();
     }
 
     public void clickVisibilityLink() {
@@ -101,6 +118,10 @@ public class homePage extends driver {
 
     public void clickMouseOverLink() {
         this.mouseOverLink.click();
+    }
+
+    public void clickNonBreakingSpaceLink() {
+        this.nonBreakingSpaceLink.click();
     }
 
 }

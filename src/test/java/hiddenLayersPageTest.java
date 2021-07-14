@@ -24,9 +24,8 @@ public class hiddenLayersPageTest {
         homePage.open();
         homePage.clickHiddenLayersLink();
         hiddenLayersPage.doubleClickGreenButton();
-
-        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //Assert.assertEquals(hiddenLayersPage.getButtonColor(), "#007bff");
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        Assert.assertTrue(hiddenLayersPage.isBlueButtonVisible());
     }
 
     @AfterTest

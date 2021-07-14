@@ -5,6 +5,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.util.concurrent.TimeUnit;
+
 public class clickPageTest {
     private static final WebDriver driver = new ChromeDriver();
 
@@ -21,6 +23,8 @@ public class clickPageTest {
         homePage.open();
         homePage.clickClickLink();
         clickPage.clickBadButton();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        Assert.assertEquals(clickPage.getButtonClassName(), "btn btn-success");
     }
 
     @AfterTest

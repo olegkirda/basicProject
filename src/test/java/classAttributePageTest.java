@@ -22,6 +22,7 @@ public class classAttributePageTest {
         homePage.clickClassAttributeLink();
         classAttributePage.clickBlueButton();
         classAttributePage.acceptAlert();
+        Assert.assertEquals(classAttributePage.getButtonClassName(), "btn class3 btn-primary btn-test");
     }
 
     @AfterTest

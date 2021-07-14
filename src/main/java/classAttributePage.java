@@ -1,3 +1,4 @@
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,4 +19,9 @@ public class classAttributePage extends driver {
     public void acceptAlert() {
         driver.switchTo().alert().accept();
     }
+
+    public String getButtonClassName() {
+        return blueButton.getAttribute("className");
+    }
+
 }

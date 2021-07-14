@@ -25,7 +25,7 @@ public class visibilityPageTest {
         homePage.clickVisibilityLink();
         visibilityPage.clickHideButton();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        Assert.assertFalse(visibilityPage.removedButton.isDisplayed());
+        Assert.assertEquals(visibilityPage.getOpacityButtonStyleValue(), "opacity: 0;");
 
     }
 

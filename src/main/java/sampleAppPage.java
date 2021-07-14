@@ -21,6 +21,7 @@ public class sampleAppPage extends driver {
 
 
     private final String userName = "Name";
+
     public void enterUserName() {
         this.userNameField.sendKeys(userName);
     }

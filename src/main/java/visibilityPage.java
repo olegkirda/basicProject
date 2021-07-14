@@ -35,4 +35,8 @@ public class visibilityPage extends driver {
         this.hideButton.click();
     }
 
+    public String getOpacityButtonStyleValue() {
+        return transparentButton.getAttribute("style");
+    }
+
 }

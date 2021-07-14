@@ -15,15 +15,10 @@ public class scrollbarsPage extends driver {
         this.hidingButton.click();
     }
 
-    /*public void clickHidingButton() {
-        JavascriptExecutor JS = (JavascriptExecutor) driver;
-        try {
-           Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        hidingButton.click();
-    }*/
+    public void scrollToHidingButton() {
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].scrollIntoView();", hidingButton);
+    }
 
     public String getButtonText() {
         return hidingButton.getText();

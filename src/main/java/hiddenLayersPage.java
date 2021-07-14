@@ -8,6 +8,9 @@ public class hiddenLayersPage extends driver {
     @FindBy(id = "greenButton")
     public WebElement greenButton;
 
+    @FindBy(id = "blueButton")
+    public WebElement blueButton;
+
     public hiddenLayersPage(WebDriver driver) {
         super(driver);
     }
@@ -18,8 +21,18 @@ public class hiddenLayersPage extends driver {
         action.perform();
     }
 
-    public String getButtonColor() {
-        return greenButton.getCssValue("background-color");
+    public boolean isBlueButtonVisible() {
+        try {
+            if (blueButton.isEnabled()) {
+                return true;
+            } else {
+                return false;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
 }
